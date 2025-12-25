@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LINE Redirect</title>
+<script>
+  // List of LINE links
+  const links = [
+    "https://line.me/ti/p/447871368774"
+  ];
+
+  // Get current index from localStorage, default to 0
+  let index = parseInt(localStorage.getItem("waIndex") || "0");
+
+  // Redirect immediately
+  window.location.replace(links[index]);
+
+  // Update index for next visit
+  localStorage.setItem("waIndex", (index + 1) % links.length);
+</script>
+</head>
+<body>
+<p>Redirecting to LINE...</p>
+</body>
+</html>
